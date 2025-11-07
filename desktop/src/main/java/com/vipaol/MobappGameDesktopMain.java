@@ -23,7 +23,7 @@ import java.util.List;
 
 public class MobappGameDesktopMain extends MobappDesktopMain {
 
-    private IUIComponent root = new MenuCanvas();
+    private IUIComponent root;
 
     public static void main(String[] args) {
         new MobappGameDesktopMain(args);
@@ -109,6 +109,9 @@ public class MobappGameDesktopMain extends MobappDesktopMain {
 
     public MobappGameDesktopMain(String[] args) {
         super(args);
+        if (root == null) {
+            root = new MenuCanvas();
+        }
         RootContainer.setRootUIComponent(root);
     }
 }
